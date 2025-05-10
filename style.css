@@ -10,13 +10,16 @@ body i{
 } */
 
 .container{
-    /* position: relative; */
-    /* width: 100%; */
+    z-index: 22;
+    position: relative;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 100px;
+    background-color: #40007c38;
+    
 }
 
 .back-vid{
@@ -24,7 +27,8 @@ body i{
     right: 0;
     bottom: 0;
     z-index: -1;
-    mix-blend-mode: overlay;
+    /* height: 600%; */
+    mix-blend-mode: lighten;
 }
 
 header{
@@ -80,6 +84,7 @@ header ul li{
 .box-icons{
     display: flex;
     gap: 40px;
+    
 }
 .box-icons a{
     list-style-type: none;
@@ -111,6 +116,7 @@ header ul li{
 
 
 .blackhole-box{
+    z-index: -1;
     position: absolute;
     top: 0;
     width: 100%;
@@ -134,6 +140,7 @@ header ul li{
     justify-content: space-between;
     align-items: center;
     color: white;
+    
 }
 .hero-info{
     position: absolute;
@@ -202,6 +209,177 @@ header ul li{
     }
 }
 
+.hero-vid-box{
+    position: absolute;
+    right: 3%;
+    top: 1%;
+}
+.hero-vid-box video{
+    height: 800px;
+    mix-blend-mode: lighten;   
+}
+
+.scroll-down{
+    height: 50px;
+    width: 30px;
+    border: 2px solid blueviolet;
+    position: absolute;
+    border-radius: 50px;
+    left: 49%;
+    bottom: 8%;
+    box-shadow: 0 0 15px lightgray;
+    cursor: pointer;
+}
+
+.scroll-down::before, .scroll-down::after{
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 10px;
+    width: 10px;
+    border: 2px solid lightgray;
+    transform: translate(-50%, 80%) rotate(0deg);
+    border-top:transparent ;
+    border-bottom:transparent ;
+    animation: scroll-down 2s ease-in-out infinite;
+}
+.scroll-down::before{
+    top: 30%;
+    animation-delay: 0.5s;
+}
+
+.info-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin-top: 50px;
+}
+
+.sections-title {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.info-cards{
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.card{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: auto;
+    height: 40vh;
+    overflow: hidden;
+    border: 1px solid gray;
+    background-color: #080020b7;
+    border-radius: 20px ;
+    transition: 0.3s;
+
+}
+
+.card img{
+    width: 80%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.card h1{
+    position: absolute;
+    margin: 0;
+    bottom: 40%;
+    left: 5%;
+    font-size: 25px;
+    z-index: 1;
+    color: lightgray;
+}
+
+.card p{
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    z-index: 1;
+    max-width: 300px;
+    color: gray;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.card video{
+    margin-top: 10%;
+    width: 70%;
+    height: 50%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+}
+
+
+.card button{
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 1px solid blueviolet;
+    background-color: gainsboro;
+    box-shadow: 0 0 5px gray;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+
+.card button:hover{
+    box-shadow: 0 0 5px gray;
+    opacity: 0.7;
+}
+
+.card:hover{
+    box-shadow: 0 0 15px gainsboro;
+}
+
+.card:nth-child(3){
+    grid-row: span 2;
+    height: 83vh;
+}
+.card:nth-child(3) p{
+    bottom: 12%;
+}
+.card:nth-child(3) h1{
+    bottom: 21%;
+}
+.card:nth-child(4){
+    grid-column: span 2;
+} 
+.card:nth-child(4) p {
+    max-width: 850px;
+}
+.card:nth-child(4) h1{
+
+}
+
+
+
+
+@keyframes .scroll-down{
+    0%{
+        opacity: 0;
+    }
+    30%, 60%{
+        opacity: 1;
+    }
+    100% {
+        top: 90%;
+        opacity: 0;
+    }
+}
 
 
 @media (max-aspect-ratio: 16/9) {
